@@ -19,6 +19,11 @@ export default function Create() {
     }
 
 
+    // const updateSubmit = (e) => {
+    //     e.preventDefault()
+    //     let data = e.
+    // }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -37,27 +42,37 @@ export default function Create() {
     }
     return (
         <>
-            <h1> upload a book </h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlfor="title"> Title</label>
-                    <input type="text" value={title} onChange={handleTitle} name="title" placeholder="Title of author here" />
-                </div>
-                <br />
-                <div>
-                    <label htmlfor="author"> author </label>
-                    <input type="text" value={author} onChange={handleauthor} name="author" placeholder="author of author here" />
-                </div>
+            <h1 class=""> upload a book </h1>
+            <div class="w-full max-w-xs">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" htmlfor="title"> Title</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={title} onChange={handleTitle} name="title" placeholder="Title of author here" />
+                    </div>
+                    <br />
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" htmlfor="author"> author </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value={author} onChange={handleauthor} name="author" placeholder="author of author here" />
+                    </div>
 
-                <button type="submit"> Submit form</button>
+                    {/* <button type="submit"> Submit form</button> */}
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Submit form
+      </button>
+                    </div>
 
-            </form>
+                </form>
+            </div>
 
             <h2>
                 <Link href="/getall">
-                    <a> View all Books</a>
+                    <button class="bg-red hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full"> View all Books</button>
+
                 </Link>
             </h2>
+
+
         </>
 
     )
